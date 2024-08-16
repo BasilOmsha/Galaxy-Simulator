@@ -40,28 +40,31 @@ Once the project is running, you can interact with the galaxy simulation directl
 ## Project Structure
 ```
 ├── src
-│ ├── Experience
-│ │ ├── Experience.js # Main entry point for the experience
-│ │ ├── Camera.js # Camera setup and control
-│ │ ├── Renderer.js # WebGL renderer setup
-│ │ ├── Universe
-│ │ │ ├── Galaxy.js # Main Galaxy class
-│ │ │ ├── GalaxyParameters.js # Galaxy configuration parameters
-│ │ │ ├── GalaxyGeometryFactory.js # Factory for creating galaxy geometry
-│ │ │ ├── GalaxyMaterialFactory.js # Factory for creating galaxy material
-│ │ ├── Utils
-│ │ │ ├── Debug.js # Debugging utility
-│ │ │ ├── Sizes.js # Handle window resizing
-│ │ │ ├── Time.js # Time management and animation control
-│ │ │ ├── EventEmitter.js # Event handling utility
-│ ├── shaders
-│ │ ├── galaxy
-│ │ │ ├── vertex.glsl # Vertex shader for the galaxy
-│ │ │ ├── fragment.glsl # Fragment shader for the galaxy
-│ ├── script.js # Main script entry point
-│ └── styles.css # Styling for the web page
-├── package.json
-└── README.md # Project readme file
+│   ├── Experience
+│   │   ├── Experience.js                # Main entry point for the experience
+│   │   ├── Camera.js                    # Camera setup and control
+│   │   ├── Renderer.js                  # WebGL renderer setup
+│   │   ├── Universe
+│   │   │   ├── Galaxy.js                # Main Galaxy class
+│   │   │   ├── GalaxyParameters.js      # Galaxy configuration parameters
+│   │   │   ├── GalaxyGeometryFactory.js # Factory for creating galaxy geometry
+│   │   │   ├── GalaxyMaterialFactory.js # Factory for creating galaxy material
+│   │   │   ├── Shaders
+│   │   │   │   ├── galaxyVertexShader.glsl   # Vertex shader for the galaxy
+│   │   │   │   ├── galaxyFragmentShader.glsl # Fragment shader for the galaxy
+│   │   ├── Utils
+│   │   │   ├── Debug.js                 # Debugging utility
+│   │   │   ├── Sizes.js                 # Handle window resizing
+│   │   │   ├── Time.js                  # Time management and animation control
+│   │   │   ├── EventEmitter.js          # Event handling utility
+├── script.js                            # Main script entry point
+├── styles.css                           # Styling for the web page
+├── index.html                           # The main HTML file for the project
+├── package.json                         # Dependencies and scripts for the project
+├── package-lock.json                    # Lockfile for npm dependencies
+├── vite.config.js                       # Configuration file for Vite
+├── .gitignore                           # Git ignore file
+└── README.md                            # Project readme file
 ```
 
 ## Main Components
