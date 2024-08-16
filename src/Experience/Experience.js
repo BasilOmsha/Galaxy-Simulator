@@ -1,9 +1,7 @@
-import Sizes from './Utils/Sizes.js'
+import Sizes from "./Utils/Sizes"
 
-export default class Experience
-{
-    constructor(canvas)
-    {
+export default class Experience {
+    constructor(canvas) {
 
         // Global access
         window.experience = this
@@ -13,5 +11,15 @@ export default class Experience
 
         // Setup
         this.sizes = new Sizes()
+
+        // Resize event
+        this.sizes.on('resize', () => {
+            this.resize()
+        })
+
+        resize(){
+
+        }
+
     }
 }
