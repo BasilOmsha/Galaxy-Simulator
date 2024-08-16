@@ -19,7 +19,6 @@ export default class Renderer {
             canvas: this.canvas,
             antialias: true
         })
-        this.instance.outputColorSpace = THREE.LinearSRGBColorSpace;
         this.instance.setSize(this.sizes.width, this.sizes.height)
         this.instance.setPixelRatio(this.sizes.pixelRatio) // pixel ratio was calculated in the Sizes class
     }

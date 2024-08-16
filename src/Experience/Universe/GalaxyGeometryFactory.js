@@ -16,19 +16,20 @@ export default class GalaxyGeometryFactory {
         // Arrays to hold the attributes of the particles
         const positions = new Float32Array(parameters.count * 3);
         const colors = new Float32Array(parameters.count * 3);
-        const scales = new Float32Array(parameters.count);
+        const scales = new Float32Array(parameters.count * 1);
         const randomness = new Float32Array(parameters.count * 3);
 
         const insideColor = new THREE.Color(parameters.insideColor);
         const outsideColor = new THREE.Color(parameters.outsideColor);
 
+        // Loop through each particle to calculate its attributes
         for (let i = 0; i < parameters.count; i++) {
             const i3 = i * 3;
 
-            // Calculate the radius for this particle
+            // Calculate a random distance from the center for the particle
             const radius = Math.random() * parameters.radius;
 
-            // Calculate the angle for the branch this particle belongs to
+            // Determine the angle of the particle within its branch
             const branchAngle = (i % parameters.branches) / parameters.branches * Math.PI * 2;
 
             // Apply randomness to the particle's position
@@ -40,13 +41,13 @@ export default class GalaxyGeometryFactory {
             // positions[i3 + 1] = randomY
             // positions[i3 + 2] = Math.sin(branchAngle) * radius + randomZ
 
-            // Set the final position of the particle
-            positions[i3] = Math.cos(branchAngle) * radius ;
+            // Set the position of the particle in 3D space
+            positions[i3    ] = Math.cos(branchAngle) * radius ;
             positions[i3 + 1] = 0;
             positions[i3 + 2] = Math.sin(branchAngle) * radius ;
 
             // Store the randomness in a separate attribute
-            randomness[i3] = randomX;
+            randomness[i3    ] = randomX;
             randomness[i3 + 1] = randomY;
             randomness[i3 + 2] = randomZ;
 

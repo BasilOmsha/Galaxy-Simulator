@@ -4,6 +4,7 @@ import Time from "./Utils/Time"
 import Camera from './Camera';
 import Renderer from './Renderer';
 import Galaxy from './Universe/Galaxy';
+import Debug from './Utils/Debug';
 
 let instance = null
 
@@ -29,6 +30,7 @@ export default class Experience {
         this.scene = new THREE.Scene()
         this.camera = new Camera()
         this.renderer = new Renderer()
+        this.galaxy = new Galaxy()
 
         // Resize event
         this.sizes.on('resize', () => {
@@ -51,6 +53,7 @@ export default class Experience {
     update() {
         this.camera.update()
         this.renderer.update()
+        this.galaxy.update()
     }
 
 }

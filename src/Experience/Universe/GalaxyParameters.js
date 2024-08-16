@@ -1,3 +1,5 @@
+import * as THREE from 'three';
+
 /**
  * GalaxyParameters is responsible for holding all the configuration settings for the Galaxy.
  * These parameters determine the visual appearance and behavior of the galaxy.
