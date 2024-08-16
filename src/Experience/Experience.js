@@ -39,11 +39,12 @@ export default class Experience {
     }
 
     resize() {
-        console.log('resize occured')
+        // console.log('resize occured')
+        this.camera.resize()
     }
 
     update() {
-
+        this.camera.update()
     }
 
 }
