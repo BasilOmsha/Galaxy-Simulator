@@ -46,15 +46,16 @@ export default class Galaxy {
             const folder = this.debug.ui.addFolder('Galaxy');
 
             // Add controls for each parameter and regenerate the galaxy on change
-            folder.add(this.parameters, 'count').min(100).max(1000000).step(100).onFinishChange(() => this.regenerate());
-            // folder.add(this.parameters, 'size').min(0.001).max(0.1).step(0.001).onFinishChange(() => this.regenerate());
-            folder.add(this.parameters, 'radius').min(0.01).max(20).step(0.10).onFinishChange(() => this.regenerate());
-            folder.add(this.parameters, 'branches').min(2).max(20).step(1).onFinishChange(() => this.regenerate());
-            // folder.add(this.parameters, 'spin').min(-5).max(5).step(0.1).onFinishChange(() => this.regenerate());
-            folder.add(this.parameters, 'randomness').min(0).max(2).step(0.001).onFinishChange(() => this.regenerate());
-            folder.add(this.parameters, 'randomnessPower').min(1).max(10).step(0.001).onFinishChange(() => this.regenerate());
-            folder.addColor(this.parameters, 'insideColor').onFinishChange(() => this.regenerate());
-            folder.addColor(this.parameters, 'outsideColor').onFinishChange(() => this.regenerate());
+            folder.add(this.parameters, 'count').min(100).max(1000000).step(100).name('Number of Stars').onFinishChange(() => this.regenerate());
+            // folder.add(this.parameters, 'size').min(0.001).max(0.1).step(0.001).name('Star Size').onFinishChange(() => this.regenerate());
+            folder.add(this.parameters, 'radius').min(0.01).max(20).step(0.10).name('Galaxy Size').onFinishChange(() => this.regenerate());
+            folder.add(this.parameters, 'branches').min(2).max(20).step(1).name('Number of Arms').onFinishChange(() => this.regenerate());
+            // folder.add(this.parameters, 'spin').min(-5).max(5).step(0.1).name('Arm Twist').onFinishChange(() => this.regenerate());
+            folder.add(this.parameters, 'randomness').min(0).max(2).step(0.001).name('Star Spread').onFinishChange(() => this.regenerate());
+            folder.add(this.parameters, 'randomnessPower').min(1).max(10).step(0.001).name('Spread Intensity').onFinishChange(() => this.regenerate());
+            folder.addColor(this.parameters, 'insideColor').name('Center Color').onFinishChange(() => this.regenerate());
+            folder.addColor(this.parameters, 'outsideColor').name('Outer Color').onFinishChange(() => this.regenerate());
+
         }
     }
 
