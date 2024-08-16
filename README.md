@@ -1,13 +1,17 @@
 <!-- ctrl shift v -->
 # Galaxy-Simulator
-Galaxy simulation with Three.js and OpenGL Shading Language
-This project is a 3D galaxy simulation built using Three.js. The simulation creates a procedural galaxy with customizable parameters, allowing for real-time manipulation and visualization of galaxy properties.
+
+This project is a 3D galaxy simulation built using Three.js and OpenGL Shading Language. The simulation creates a procedural galaxy with customizable parameters, allowing for real-time manipulation and visualization of galaxy properties.
 
 ## Table of Contents
 
-- [Galaxy-Simulator](#galaxy-simulator)
-  - [Table of Contents](#table-of-contents)
-  - [Installation](#installation)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Main Components](#main-components)
+- [Customization](#customization)
+- [Technical Details](#technical-details)
+- [Winding Problem in the Galaxy Simulation](#winding-problem-in-the-galaxy-simulation)
 
 ## Installation
 
