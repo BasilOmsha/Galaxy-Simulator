@@ -19,8 +19,10 @@ export default class GalaxyGeometryFactory {
         const scales = new Float32Array(parameters.count * 1);
         const randomness = new Float32Array(parameters.count * 3);
 
-        const insideColor = new THREE.Color(parameters.insideColor);
-        const outsideColor = new THREE.Color(parameters.outsideColor);
+        // const insideColor = new THREE.Color(parameters.insideColor);
+        // const outsideColor = new THREE.Color(parameters.outsideColor);
+        const insideColor = parameters.insideColor.clone();
+        const outsideColor = parameters.outsideColor.clone();
 
         // Loop through each particle to calculate its attributes
         for (let i = 0; i < parameters.count; i++) {
