@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import Experience from '../Experience'
+import Experience from '../../Experience'
 // import vertexShader from './Shaders/galaxyVertexShader.glsl'
 // import fragmentShader from './Shaders/galaxyFragmentShader.glsl'
 import GalaxyParameters from './GalaxyParameters';

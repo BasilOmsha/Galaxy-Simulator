@@ -3,7 +3,7 @@ import Sizes from "./Utils/Sizes"
 import Time from "./Utils/Time"
 import Camera from './Camera';
 import Renderer from './Renderer';
-import Galaxy from './Universe/Galaxy';
+import Galaxy from './Universe/Galaxy/Galaxy';
 import Debug from './Utils/Debug';
 
 let instance = null
