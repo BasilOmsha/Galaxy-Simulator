@@ -3,6 +3,7 @@ import Sizes from "./Utils/Sizes"
 import Time from "./Utils/Time"
 import Camera from './Camera';
 import Renderer from './Renderer';
+import Galaxy from './Universe/Galaxy';
 
 let instance = null
 
@@ -22,6 +23,7 @@ export default class Experience {
         this.canvas = canvas
 
         // Setup
+        this.debug = new Debug()
         this.sizes = new Sizes()
         this.time = new Time()
         this.scene = new THREE.Scene()
