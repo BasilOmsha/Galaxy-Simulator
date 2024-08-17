@@ -69,15 +69,15 @@ Once the project is running, you can interact with the galaxy simulation directl
 │   │   │   │   ├── Shaders
 │   │   │   │   │   ├── galaxyVertexShader.glsl      # Vertex shader for the advanced galaxy
 │   │   │   │   │   ├── galaxyFragmentShader.glsl    # Fragment shader for the advanced galaxy
-│   ├── Utils
-│   │   ├── Debug.js                     # Debugging utility
-│   │   ├── Sizes.js                     # Handle window resizing
-│   │   ├── Time.js                      # Time management and animation control
-│   │   ├── EventEmitter.js              # Event handling utility
-│   │   ├── MathUtils.js                 # Mathematical utilities like log-normal distribution
-├── script.js                                # Main script entry point
-├── styles.css                               # Styling for the web page
-├── index.html                               # The main HTML file for the project
+│   │   ├── Utils
+│   │   │   ├── Debug.js                     # Debugging utility
+│   │   │   ├── Sizes.js                     # Handle window resizing
+│   │   │   ├── Time.js                      # Time management and animation control
+│   │   │   ├── EventEmitter.js              # Event handling utility
+│   │   │   ├── MathUtils.js                 # Mathematical utilities like log-normal distribution
+│   ├── script.js                                # Main script entry point
+│   ├── styles.css                               # Styling for the web page
+│   ├── index.html                               # The main HTML file for the project
 ├── package.json                             # Dependencies and scripts for the project
 ├── package-lock.json                        # Lockfile for npm dependencies
 ├── vite.config.js                           # Configuration file for Vite
