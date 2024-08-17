@@ -49,11 +49,11 @@ export default class AdvancedGalaxy {
 
             folder.add(this.params, 'count').min(100).max(1000000).step(100).name('Number of Stars').onFinishChange(() => this.generateGalaxy());
             folder.add(this.params, 'size').min(1).max(100).step(1).name('Star Size').onFinishChange(() => this.generateGalaxy());
-            folder.add(this.params, 'branches').min(2).max(100).step(1).name('Number of Arms').onFinishChange(() => this.generateGalaxy());
+            folder.add(this.params, 'branches').min(2).max(100).step(1).name('Elliptical spread').onFinishChange(() => this.generateGalaxy());
             folder.add(this.params, 'randomness').min(0).max(10).step(0.1).name('Star Spread').onFinishChange(() => this.generateGalaxy());
-            folder.add(this.params, 'lerp').min(0.1).max(10).step(0.1).name('Color Lerp').onFinishChange(() => this.generateGalaxy());
-            folder.add(this.params, 'sigma').min(0.1).max(5).step(0.1).name('Randomness Sigma').onFinishChange(() => this.generateGalaxy());
-            folder.add(this.params, 'mu').min(0.1).max(5).step(0.1).name('Randomness Mu').onFinishChange(() => this.generateGalaxy());
+            folder.add(this.params, 'lerp').min(0.1).max(10).step(0.1).name('Color offset').onFinishChange(() => this.generateGalaxy());
+            folder.add(this.params, 'sigma').min(0.001).max(2).step(0.001).name('Distribution σ').onFinishChange(() => this.generateGalaxy());
+            folder.add(this.params, 'mu').min(0.001).max(5).step(0.001).name('Distribution μ').onFinishChange(() => this.generateGalaxy());
             folder.addColor(this.params, 'insideColor').name('Center Color').onFinishChange(() => this.generateGalaxy());
             folder.addColor(this.params, 'outsideColor').name('Outer Color').onFinishChange(() => this.generateGalaxy());
             // Add a button to generate the galaxy
