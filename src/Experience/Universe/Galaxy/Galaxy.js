@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import Experience from '../../Experience'
 // import vertexShader from './Shaders/galaxyVertexShader.glsl'
 // import fragmentShader from './Shaders/galaxyFragmentShader.glsl'
-import GalaxyParameters from './GalaxyParameters';
+import GalaxyParameters from '../GalaxyParameters';
 import GalaxyGeometryFactory from './GalaxyGeometryFactory';
 import GalaxyMaterialFactory from './GalaxyMaterialFactory';
 
@@ -26,6 +26,9 @@ export default class Galaxy {
      * Initializes the galaxy by creating its geometry, material, and adding it to the scene.
      */
     init() {
+        if (this.points) {
+            this.dispose();
+        }
         // Create Geometry
         this.geometry = GalaxyGeometryFactory.createGeometry(this.parameters);
 
@@ -56,9 +59,17 @@ export default class Galaxy {
             folder.addColor(this.parameters, 'insideColor').name('Center Color').onFinishChange(() => this.regenerate());
             folder.addColor(this.parameters, 'outsideColor').name('Outer Color').onFinishChange(() => this.regenerate());
 
+            // Add a button to generate the galaxy
+            folder.add({ generate: () => this.generateAndSetActiveGalaxy() }, 'generate').name('Generate a Galaxy');
+            this.dispose();
+
         }
     }
 
+    generateAndSetActiveGalaxy() {
+        this.experience.setActiveGalaxy(this);  // Set this galaxy as the active one
+        this.init();  // Generate the galaxy
+    }
 
     /**
      * Updates the galaxy, particularly its animation over time.

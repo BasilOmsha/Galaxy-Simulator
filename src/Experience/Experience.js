@@ -5,6 +5,7 @@ import Camera from './Camera';
 import Renderer from './Renderer';
 import Galaxy from './Universe/Galaxy/Galaxy';
 import Debug from './Utils/Debug';
+import AdvancedGalaxy from './Universe/AdvancedGalaxy/AdvancedGalaxy';
 
 let instance = null
 
@@ -31,6 +32,11 @@ export default class Experience {
         this.camera = new Camera()
         this.renderer = new Renderer()
         this.galaxy = new Galaxy()
+        this.advancedGalaxy = new AdvancedGalaxy()
+        this.currentGalaxy = null;  // Track the current active galaxy
+
+        // Set the default active galaxy
+        this.setActiveGalaxy(this.galaxy);
 
         // Resize event
         this.sizes.on('resize', () => {
@@ -44,6 +50,15 @@ export default class Experience {
 
     }
 
+    setActiveGalaxy(galaxy) {
+        if (this.currentGalaxy) {
+            this.currentGalaxy.dispose();  // Dispose of the previous galaxy
+        }
+        this.currentGalaxy = galaxy;
+        // Add the new galaxy to the scene
+        this.currentGalaxy.init();
+    }
+
     resize() {
         // console.log('resize occured')
         this.camera.resize()
@@ -53,7 +68,11 @@ export default class Experience {
     update() {
         this.camera.update()
         this.renderer.update()
-        this.galaxy.update()
+        // this.galaxy.update()
+        // this.advancedGalaxy.update()
+        if (this.currentGalaxy) {
+            this.currentGalaxy.update();
+        }
     }
 
 }

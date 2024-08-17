@@ -12,14 +12,14 @@ export default class GalaxyParameters {
         this._count = 200000;
         this._size = 0.005;
         this._blending = THREE.AdditiveBlending;
-        // this._lerp = 2;
+        this._lerp = 2;
         this._radius = 5;
         this._branches = 3;
         this._spin = 1;
         this._randomness = 0.5;
         this._randomnessPower = 3;
-        this._sigma = 1.75;
-        this._mu = 1.0;
+        this._sigma= 1.75;  // Standard Deviation
+        this._mu= 1.0; // Stand for Mean
         this._insideColor = new THREE.Color('#ff6030');
         this._outsideColor = new THREE.Color('#1b3984');
     }
