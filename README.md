@@ -138,7 +138,10 @@ modelPosition.z = sin(angle) * distanceToCenter;
 
 - **Angle Offset**: This value adjusts the angle over time (`uTime`), and it depends inversely on `distanceToCenter`. This means that stars closer to the center (smaller `distanceToCenter`) will have a larger `angleOffset` and therefore will rotate faster.
 
-Here, stars closer to the center (with a smaller `distanceToCenter`) rotate faster due to the inverse relationship between `angleOffset` and `distanceToCenter`. This accurately simulates the differential rotation seen in real galaxies. However, this simulation approach naturally leads to the winding problem: as the inner stars rotate faster, the spiral arms of the galaxy gradually wind up more tightly. Over time, this causes the spiral arms to lose their distinct shape and blend into the rest of the galaxy, reducing their visual clarity.
+Here, stars closer to the center (with a smaller `distanceToCenter`) rotate faster due to the inverse relationship between `angleOffset` and `distanceToCenter`. This accurately simulates the differential rotation seen in real galaxies. However, this simulation approach naturally leads to the winding problem as the inner stars rotate faster, the spiral arms of the galaxy gradually wind up more tightly. Over time, this causes the spiral arms to lose their distinct shape and blend into the rest of the galaxy, reducing their visual clarity.
+
+~~To fully address this issue and maintain the distinctness of the spiral arms, additional mechanisms, such as simulating spiral arms as density waves (Implementing density waves theory) (where stars move in and out of the arms), would need to be implemented. Currently, the shader code provides a good rotational effect but does not solve the winding problem, meaning that without intervention, the spiral arms become less distinct over time.~~
+
 
 ## How the Advanced Galaxy Simulation Solves the Winding Problem
 
