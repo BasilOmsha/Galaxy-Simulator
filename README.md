@@ -38,7 +38,7 @@ To get started with the galaxy simulation, you'll need to have [Node.js](https:/
 
 4. Start the development server:
    ```bash
-   npm run start
+   npm run dev
    ```
 
 ## Usage
